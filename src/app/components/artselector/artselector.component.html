@@ -1,0 +1,234 @@
+<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <mdb-card>
+                <mdb-card-img src="{{fiveStarArtifactList[flowerArtifactIndex].images.flower}}" alt="Card image cap">
+                </mdb-card-img>
+                <mdb-card-body>
+                    <mdb-card-title>
+                        <h4>{{fiveStarArtifactList[flowerArtifactIndex].flower.name}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                        Artifact Level: <input type="range" (change)="changeLevel($event.target.value, 'flower')"
+                            value="0" name="volume" min="0" max="20"> {{flowerLevel}}
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="browser-default custom-select" disabled>
+                                    <option value="HP">HP
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="flowerStats['HP']['level' + flowerLevel]" readonly mdbInput
+                                    type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let x of [].constructor(4); let j = index">
+                            <div class="col-lg-4">
+                                <select (change)="SubStatChange(0,$event.target.value,j+1)"
+                                    class="browser-default custom-select">
+                                    <option *ngFor="let x of subStats; let i = index" value="{{i}}">{{x.subStats}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="currentArtifactStats[0]['sub'+ (j+1) + 'Val']"
+                                    (click)="ValueChange(0,j+1)" (keypress)="ValueChange(0,j+1)" mdbInput type="number"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </mdb-card-text>
+                    <select [(ngModel)]="flowerArtifactIndex" (change)="setChange(0,$event.target.value)"  class="browser-default custom-select">
+                        <option *ngFor="let x of fiveStarArtifactList; let i = index" value="{{i}}">{{x.name}}</option>
+                    </select>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+        <div class="col-lg-4">
+            <mdb-card>
+                <mdb-card-img src="{{fiveStarArtifactList[plumeArtifactIndex].images.plume}}" alt="Card image cap">
+                </mdb-card-img>
+                <mdb-card-body>
+                    <mdb-card-title>
+                        <h4>{{fiveStarArtifactList[plumeArtifactIndex].plume.name}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                        Artifact Level: <input type="range" (change)="changeLevel($event.target.value, 'plume')"
+                            value="0" name="volume" min="0" max="20"> {{plumeLevel}}
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="browser-default custom-select" disabled>
+                                    <option value="ATK">ATK
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="plumeStats['ATK']['level' + plumeLevel]" readonly mdbInput
+                                    type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let x of [].constructor(4); let j = index">
+                            <div class="col-lg-4">
+                                <select (change)="SubStatChange(1,$event.target.value,j+1)"
+                                    class="browser-default custom-select">
+                                    <option *ngFor="let x of subStats; let i = index" value="{{i}}">{{x.subStats}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="currentArtifactStats[1]['sub'+ (j+1) + 'Val']"
+                                    (click)="ValueChange(1,j+1)" (keypress)="ValueChange(1,j+1)" mdbInput type="number"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </mdb-card-text>
+                    <select [(ngModel)]="plumeArtifactIndex" (change)="setChange(1,$event.target.value)" class="browser-default custom-select">
+                        <option *ngFor="let x of fiveStarArtifactList; let i = index" value="{{i}}"> {{x.name}}</option>
+                    </select>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+        <div class="col-lg-4">
+            <mdb-card>
+                <mdb-card-img src="{{fiveStarArtifactList[sandArtifactIndex].images.sands}}" alt="Card image cap">
+                </mdb-card-img>
+                <mdb-card-body>
+                    <mdb-card-title>
+                        <h4>{{fiveStarArtifactList[sandArtifactIndex].sands.name}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                        Artifact Level: <input type="range" (change)="changeLevel($event.target.value, 'sands')"
+                            value="0" name="volume" min="0" max="20"> {{sandsLevel}}
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select (change)="mainStatChange(2,$event.target.value)"
+                                    class="browser-default custom-select">
+                                    <option *ngFor="let x of mainStats; let i = index" value="{{i}}">{{x.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="currentArtifactStats[2]['mainVal']" readonly mdbInput type="number"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let x of [].constructor(4); let j = index">
+                            <div class="col-lg-4">
+                                <select (change)="SubStatChange(2,$event.target.value,j+1)"
+                                    class="browser-default custom-select">
+                                    <option *ngFor="let x of subStats; let i = index" value="{{i}}">{{x.subStats}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="currentArtifactStats[2]['sub'+ (j+1) + 'Val']"
+                                    (click)="ValueChange(2,j+1)" (keypress)="ValueChange(2,j+1)" mdbInput type="number"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </mdb-card-text>
+                    <select [(ngModel)]="sandArtifactIndex" (change)="setChange(2,$event.target.value)" class="browser-default custom-select">
+                        <option *ngFor="let x of fiveStarArtifactList; let i = index" value="{{i}}">{{x.name}}</option>
+                    </select>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+        <div class="col-lg-4">
+            <mdb-card>
+                <mdb-card-img src="{{fiveStarArtifactList[gobletArtifactIndex].images.goblet}}" alt="Card image cap">
+                </mdb-card-img>
+                <mdb-card-body>
+                    <mdb-card-title>
+                        <h4>{{fiveStarArtifactList[gobletArtifactIndex].goblet.name}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                        Artifact Level: <input type="range" (change)="changeLevel($event.target.value, 'goblet')"
+                            value="0" name="volume" min="0" max="20"> {{gobletLevel}}
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select (change)="mainStatChange(3,$event.target.value)"
+                                    class="browser-default custom-select">
+                                    <option *ngFor="let x of mainStats; let i = index" value="{{i}}">{{x.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="currentArtifactStats[3]['mainVal']" readonly mdbInput type="number"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let x of [].constructor(4); let j = index">
+                            <div class="col-lg-4">
+                                <select (change)="SubStatChange(3,$event.target.value,j+1)"
+                                    class="browser-default custom-select">
+                                    <option *ngFor="let x of subStats; let i = index" value="{{i}}">{{x.subStats}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-8">
+                                <input [(ngModel)]="currentArtifactStats[3]['sub'+ (j+1) + 'Val']"
+                                    (click)="ValueChange(3,j+1)" (keypress)="ValueChange(3,j+1)" mdbInput type="number"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </mdb-card-text>
+                    <select [(ngModel)]="gobletArtifactIndex" (change)="setChange(3,$event.target.value)" class="browser-default custom-select">
+                        <option *ngFor="let x of fiveStarArtifactList; let i = index" value="{{i}}">{{x.name}}</option>
+                    </select>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+        <div class="col-lg-4">
+            <mdb-card>
+                <mdb-card-img src="{{fiveStarArtifactList[circletArtifactIndex].images.circlet}}" alt="Card image cap">
+                </mdb-card-img>
+                <mdb-card-body>
+                    <mdb-card-title>
+                        <h4>{{fiveStarArtifactList[circletArtifactIndex].circlet.name}}</h4>
+                    </mdb-card-title>
+                    <mdb-card-text>
+                        Artifact Level: <input type="range" (change)="changeLevel($event.target.value, 'circlet')"
+                            value="0" name="volume" min="0" max="20"> {{circletLevel}}
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <select (change)="mainStatChange(4,$event.target.value)"
+                                        class="browser-default custom-select">
+                                        <option *ngFor="let x of mainStats; let i = index" value="{{i}}">{{x.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input [(ngModel)]="currentArtifactStats[4]['mainVal']"
+                                        readonly mdbInput type="number"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="row" *ngFor="let x of [].constructor(4); let j = index">
+                                <div class="col-lg-4">
+                                    <select (change)="SubStatChange(4,$event.target.value,j+1)"
+                                        class="browser-default custom-select">
+                                        <option *ngFor="let x of subStats; let i = index" value="{{i}}">{{x.subStats}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input [(ngModel)]="currentArtifactStats[4]['sub'+ (j+1) + 'Val']"
+                                        (click)="ValueChange(4,j+1)" (keypress)="ValueChange(4,j+1)" mdbInput type="number"
+                                        class="form-control">
+                                </div>
+                            </div>
+                    </mdb-card-text>
+                    <select [(ngModel)]="circletArtifactIndex" (change)="setChange(4,$event.target.value)" class="browser-default custom-select">
+                        <option *ngFor="let x of fiveStarArtifactList; let i = index" value="{{i}}">{{x.name}}</option>
+                    </select>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+    </div>
+</div>

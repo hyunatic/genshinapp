@@ -1,0 +1,678 @@
+<div *ngIf="!bannerToggle">
+    <div class="mb-n5" style="margin-top: 60px;">
+        <mdb-card bgColor="bg-dark">
+            <mdb-card-body>
+                <div (click)="GoBack()">
+                    <p class="float-left">
+                        <mdb-icon fas icon="undo" class="white-text" size="2x"></mdb-icon>
+                    </p>
+                </div>
+                <p class="float-right">
+                    <mdb-icon class="white-text" size="2x" fas icon="sync"></mdb-icon>
+                </p>
+            </mdb-card-body>
+        </mdb-card>
+    </div>
+
+    <br><br>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <mdb-card bgColor="bg-light">
+                    <mdb-card-body>
+                        <h4><strong>{{cleanBannerName}}</strong></h4>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br><br>
+                <h5>Increased Drop Rates!</h5>
+            </div>
+            <div class="col-lg-12">
+                <br>
+                <mdb-card class="orange lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Percentage of 5-Star Item Drops: 50.000%</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-dark" class="w-25">
+                    <mdb-card-body *ngFor="let x of ratedFivestar">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="assets/images/characters/thumbnails/{{x.src.toLowerCase()}}" alt="">
+                            </div>
+                            <div class="col-lg-9 mt-4">
+                                <p class="white-text h4">{{x.name}}</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-secondary" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Percentage of 4-Star Item Drops: 50.000%</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="col w-100"></div>
+            <div class="col-lg-12">
+                <br>
+                <div class="card-deck">
+                    <mdb-card class="h-50" bgColor="bg-dark" *ngFor="let x of ratedFourstar">
+                        <mdb-card-body>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="assets/images/characters/thumbnails/{{x.src.toLowerCase()}}" alt="">
+                                </div>
+                                <div class="col-lg-9 mt-4">
+                                    <p class="white-text h4">{{x.name}}</p>
+                                </div>
+                            </div>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <br><br>
+                <h5>Wish Details</h5>
+            </div>
+            <div class="col-lg-12">
+                <mdb-card class="brown lighten-1" style="height: 65px;">
+                    <mdb-card-body>
+                        <p class="white-text"><strong>Limited time event</strong></p>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="col-lg-12">
+                <p class="my-3">
+                    Event Wish "{{cleanBannerName}}" is now available. During this event wish, the 5-star character
+                    <u> {{ratedFivestar[0].name}} ({{ratedFivestar[0].element}})</u> as well as 4-star characters
+                    <u> {{ratedFourstar[0].name}} ({{ratedFourstar[0].element}})</u>,
+                    <u> {{ratedFourstar[0].name}} ({{ratedFourstar[0].element}})</u>, and <u> {{ratedFourstar[0].name}}
+                        ({{ratedFourstar[0].element}})</u>
+                    will get a <u>huge drop-rate boost!</u>
+                </p>
+                <p class="my-3">
+                    〓Rules〓
+                </p>
+                <p class="my-3">
+                    5-Star Items
+                </p>
+                <p class="my-3">
+                    For Event Wish "{{cleanBannerName}}": Base probability of winning 5-star character = <span
+                        class="orange-text">0.600%</span>; consolidated probability (incl. guarantee) = <span
+                        class="orange-text">1.600%</span>; guaranteed to win 5-star character at least once per
+                    <span class="orange-text">90</span> attempts.
+                    The first time you win a 5-star item in this event wish, there is a <span
+                        class="orange-text">50%</span>
+                    chance it will be the promotional character <u>{{ratedFivestar[0].name}}
+                        ({{ratedFivestar[0].element}}).</u> If the first
+                    5-star
+                    character you win in this event wish is not the promotional character, then the next 5-star
+                    character
+                    you win is <span class="orange-text">guaranteed</span> to be the promotional character.
+                </p>
+                <p class="my-3">
+                    4-Star Items
+                </p>
+                <p class="my-3">
+                    For Event Wish "Banner Name": Base probability of winning 4-star item = <span
+                        class="orange-text">5.100%</span>; consolidated probability (incl. guarantee) = <span
+                        class="orange-text">13.000%</span>; guaranteed to win 4-star or above item at least once per
+                    <span class="purple-text">10</span> attempts. <br />
+                    The first time you win a 4-star item in this event wish, there is a <span
+                        class="purple-text">50%</span>
+                    chance it will be one of the featured characters <u> {{ratedFourstar[0].name}}
+                        ({{ratedFourstar[0].element}})</u>,
+                    <u> {{ratedFourstar[0].name}} ({{ratedFourstar[0].element}})</u>, and <u> {{ratedFourstar[0].name}}
+                        ({{ratedFourstar[0].element}})</u>.
+                    If
+                    the
+                    first 4-star item you win in this event wish is not one of the featured characters, then the
+                    next
+                    4-star
+                    item you win is <span class="purple-text">guaranteed</span> to be a featured character.
+                </p>
+                <p class="my-3">
+                    4-star weapons won in this wish come with <span class="orange-text">Masterless
+                        Starglitter</span>
+                    ×2;
+                    3-star weapons won in this wish come with <span class="purple-text">Masterless Stardust</span>
+                    ×15.
+                </p>
+                <p class="">
+                    〓Duplicate Characters〓
+                </p>
+                <p class="my-3">
+                    On obtaining a 5-star character that you already own (whether obtained in a wish, redeemed at
+                    the
+                    shop,
+                    or awarded by the game): The 2nd – 7th time you obtain the character, it will be converted into
+                    <span class="purple-text">that character's Stella Fortuna</span> ×1 and <span
+                        class="orange-text">Masterless Starglitter</span> ×10; from the 8th time onwards it will be
+                    converted into <span class="orange-text">Masterless Starglitter</span> ×25.
+                </p>
+                <p class="my-3">
+                    On obtaining a 4-star character that you already own (whether obtained in a wish, redeemed at
+                    the
+                    shop,
+                    or awarded by the game): The 2nd – 7th time you obtain the character, it will be converted into
+                    <span class="purple-text">that character's Stella Fortuna</span> ×1 and <span
+                        class="orange-text">Masterless Starglitter</span> ×2; from the 8th time onwards it will be
+                    converted
+                    into <span class="orange-text">Masterless Starglitter</span> ×5.
+                </p>
+                <p class="my-3">
+                    ※ This is a character event wish. The wish guarantee count is accumulated within this event only
+                    and
+                    is
+                    independent of the guarantee counts of other wishes.
+                </p>
+                <h4 class="my-3 brass">
+                    Items to wish for:
+                </h4>
+            </div>
+            <div class="col-lg-12">
+                <mdb-card class="orange lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Base Probability for 5-Star Item Drops: 0.600% (Incl. guarantee: 1.600%)</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                    <thead class="grey white-text">
+                        <tr>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">Item Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr mdbTableCol *ngFor="let x of fiveStars">
+                            <th scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</th>
+                            <td class="orange-text"><img *ngIf="x.type === 'character'"
+                                    src="assets/images/characters/thumbnails/{{x.src.toLowerCase()}}" alt="">
+                                <strong>{{x.name}}</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-secondary" class="lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Base Probability for 4-Star Item Drops: 5.100% (Incl. guarantee: 13.000%)</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                    <thead class="grey white-text">
+                        <tr>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">Item Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr mdbTableCol *ngFor="let x of fourStars">
+                            <th scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</th>
+                            <td class="purple-text"><img *ngIf="x.type === 'character'"
+                                    src="assets/images/characters/thumbnails/{{x.src.toLowerCase()}}" alt="">
+                                <strong>{{x.name}}</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-primary" class="lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Base Probability for 3-Star Item Drops: 94.300% (Incl. guarantee: 85.400%)</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                    <thead class="grey white-text">
+                        <tr>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">Item Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr mdbTableCol *ngFor="let x of threeStars">
+                            <th scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</th>
+                            <td class="blue-text"><strong>{{x.name}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div *ngIf="bannerToggle">
+    <div class="mb-n5" style="margin-top: 60px;">
+        <mdb-card bgColor="bg-dark">
+            <mdb-card-body>
+                <div (click)="GoBack()">
+                    <p class="float-left">
+                        <mdb-icon fas icon="undo" class="white-text" size="2x"></mdb-icon>
+                    </p>
+                </div>
+                <p class="float-right">
+                    <mdb-icon class="white-text" size="2x" fas icon="sync"></mdb-icon>
+                </p>
+            </mdb-card-body>
+        </mdb-card>
+    </div>
+
+    <br><br>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <mdb-card bgColor="bg-light">
+                    <mdb-card-body>
+                        <h4><strong>{{cleanBannerName}}</strong></h4>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br><br>
+                <h5>Increased Drop Rates!</h5>
+            </div>
+            <div class="col-lg-12">
+                <br>
+                <mdb-card class="orange lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Percentage of 5-Star Item Drops: 50.000%</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="col-lg-12">
+                <br>
+                <div class="card-deck">
+                    <mdb-card class="h-50" bgColor="bg-dark" *ngFor="let x of ratedFivestar">
+                        <mdb-card-body>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="assets/images/weapons/{{x.src}}" class="img-fluid" height="50" width="50"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-9 mt-4">
+                                    <p class="white-text h4">{{x.name}}</p>
+                                </div>
+                            </div>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-secondary" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Percentage of 4-Star Item Drops: 50.000%</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="col w-100"></div>
+            <div class="col-lg-12">
+                <br>
+                <div class="card-deck">
+                    <mdb-card class="h-50" bgColor="bg-dark" *ngFor="let x of ratedFourstar">
+                        <mdb-card-body>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="assets/images/weapons/{{x.src}}" class="img-fluid" height="50" width="50"
+                                        alt="">
+                                </div>
+                                <div class="col-lg-9 mt-4">
+                                    <p class="white-text h4">{{x.name}}</p>
+                                </div>
+                            </div>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <br><br>
+                <h5>Wish Details</h5>
+            </div>
+            <div class="col-lg-12">
+                <mdb-card class="brown lighten-1" style="height: 65px;">
+                    <mdb-card-body>
+                        <p class="white-text"><strong>Limited time event</strong></p>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="col-lg-12">
+                <p class="my-3">
+                    Event Wish "<span class="orange-text">{{cleanBannerName}}</span> is
+                    now available. During this event wish, the 5-star weapons
+                    <span class="orange-text">{{ratedFivestar[0].name}} ({{ratedFivestar[0].class}})</span> and
+                    <span class="orange-text">
+                        {{ratedFivestar[1].name}} ({{ratedFivestar[1].class}})
+                    </span>
+                    as well as the event-exclusive 4-star weapon
+                    <span class="purple-text">{{ratedFourstar[0].name}} ({{ratedFourstar[0].class}})</span>, and the
+                    4-star weapons <span class="purple-text">{{ratedFourstar[1].name}}
+                        ({{ratedFourstar[1].class}})</span>, <span class="purple-text">{{ratedFourstar[2].name}}
+                        ({{ratedFourstar[2].class}}),</span>,
+                    <span class="purple-text">{{ratedFourstar[3].name}} ({{ratedFourstar[3].class}})</span>, and
+                    <span class="purple-text">{{ratedFourstar[4].name}} ({{ratedFourstar[4].class}})</span> will get a
+                    <span class="orange-text">huge drop-rate boost</span>!
+                    <br />
+                    <span class="red-text">
+                        ※ Of the above weapons, the event-exclusive weapon will not be
+                        available in the standard wish "Wanderlust Invocation".
+                    </span>
+                </p>
+                <p class="my-3">〓Rules〓</p>
+                <p class="my-3">5-Star Items</p>
+                <p class="my-3">
+                    For Event Wish "<span class="orange-text">Epitome</span>
+                    Invocation": Base probability of winning 5-star weapon =
+                    <span class="orange-text">0.700%</span>; consolidated probability
+                    (incl. guarantee) = <span class="orange-text">1.850%</span>;
+                    guaranteed to win 5-star weapon at least once per
+                    <span class="orange-text">80</span> attempts. <br />
+                    The first time you win a 5-star weapon in this event, there is a
+                    <span class="orange-text">75%</span> chance it will be one of the
+                    promotional weapons
+                    <span class="orange-text">{{ratedFivestar[0].name}} ({{ratedFivestar[0].class}})</span> and
+                    <span class="orange-text">
+                        {{ratedFivestar[1].name}} ({{ratedFivestar[1].class}})
+                    </span>
+                    . If the first 5-star weapon you win in this event wish is not one
+                    of the promotional weapons, then the next 5-star weapon you win is
+                    <span class="orange-text">guaranteed</span> to be a promotional
+                    weapon.
+                </p>
+                <p class="my-3">4-Star Items</p>
+                <p class="my-3">
+                    For Event Wish "<span class="orange-text">Epitome</span>
+                    Invocation": Base probability of winning 4-star item =
+                    <span class="orange-text">6.000%</span>; base probability of
+                    winning 4-star character = <span class="orange-text">3.000%</span>,
+                    and base probability of winning 4-star weapon =
+                    <span class="orange-text">3.000%</span>; consolidated probability
+                    (incl. guarantee) of winning 4-star item =
+                    <span class="orange-text">14.500%</span>; guaranteed to win 4-star
+                    or above item at least once per <span class="orange-text">10</span>
+                    attempts; probability of winning 4-star item through the guarantee
+                    = <span class="orange-text">99.300%</span>, and probability of
+                    winning 5-star item through the guarantee =
+                    <span class="orange-text">0.700%</span>
+                    <br />
+                    The first time you win a 4-star item in this event wish, there is
+                    a <span class="orange-text">75%</span> chance that it will be one
+                    of the featured weapons
+                    <span class="purple-text">{{ratedFourstar[0].name}} ({{ratedFourstar[0].class}})</span>, and the
+                    4-star weapons <span class="purple-text">{{ratedFourstar[1].name}}
+                        ({{ratedFourstar[1].class}})</span>, <span class="purple-text">{{ratedFourstar[2].name}}
+                        ({{ratedFourstar[2].class}}),</span>,
+                    <span class="purple-text">{{ratedFourstar[3].name}} ({{ratedFourstar[3].class}})</span>, and
+                    <span class="purple-text">{{ratedFourstar[4].name}} ({{ratedFourstar[4].class}})</span>. If the
+                    first 4-star item you win in this event wish is not one of the
+                    featured weapons, then the next 4-star item you win is
+                    <span class="orange-text-text">guaranteed</span> to be a featured
+                    weapon.
+                </p>
+                <p class="my-3">
+                    5-star weapons won in this wish come with
+                    <span class="orange-text">Masterless Starglitter</span> ×10; 4-star
+                    weapons won in this wish come with
+                    <span class="orange-text">Masterless Starglitter</span> ×2; 3-star
+                    weapons won in this wish come with
+                    <span class="purple-text">Masterless Stardust</span> ×15.
+                </p>
+                <p class="my-3">〓Duplicate Characters〓</p>
+                <p class="my-3">
+                    On obtaining a 4-star character that you already own (whether
+                    obtained in a wish, redeemed at the shop, or awarded by the game):
+                    The 2nd – 7th time you obtain the character, it will be converted
+                    into
+                    <span class="purple-text">that character's Stella Fortuna</span> ×1
+                    and <span class="orange-text">Masterless Starglitter</span> ×2;
+                    from the 8th time onwards it will be converted into
+                    <span class="orange-text">Masterless Starglitter</span> ×5.
+                </p>
+                <p class="my-3">
+                    ※ This is a weapon event wish. The wish guarantee count is
+                    accumulated within this event only and is independent of the
+                    guarantee counts of other wishes.
+                </p>
+                <h4 class="my-3 black-text">Items to wish for:</h4>
+            </div>
+            <div class="col-lg-12">
+                <mdb-card class="orange lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Base Probability for 5-Star Item Drops: 0.600% (Incl. guarantee: 1.600%)</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                    <thead class="grey white-text">
+                        <tr>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">Item Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr mdbTableCol *ngFor="let x of fiveStars">
+                            <th scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</th>
+                            <td class="orange-text"><strong>{{x.name}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-secondary" class="lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Base Probability for 4-Star Item Drops: 5.100% (Incl. guarantee: 13.000%)</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                    <thead class="grey white-text">
+                        <tr>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">Item Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr mdbTableCol *ngFor="let x of fourStars">
+                            <th scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</th>
+                            <td class="purple-text"><img *ngIf="x.type === 'character'"
+                                    src="assets/images/characters/thumbnails/{{x.src.toLowerCase()}}" alt="">
+                                <strong>{{x.name}}</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <mdb-card bgColor="bg-primary" class="lighten-3" style="height: 65px;">
+                    <mdb-card-body>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                    <mdb-icon class="orange-text" fas icon="star"></mdb-icon>
+                                </h5>
+                            </div>
+                            <div class="col-lg-10">
+                                <p> Base Probability for 3-Star Item Drops: 94.300% (Incl. guarantee: 85.400%)</p>
+                            </div>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+
+            <div class="col-lg-12">
+                <br>
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                    <thead class="grey white-text">
+                        <tr>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">Item Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr mdbTableCol *ngFor="let x of threeStars">
+                            <th scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</th>
+                            <td class="blue-text"><strong>{{x.name}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

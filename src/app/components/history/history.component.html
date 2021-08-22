@@ -1,0 +1,77 @@
+<div class="mb-n5" style="margin-top: 60px;">
+    <mdb-card bgColor="bg-dark">
+        <mdb-card-body>
+            <div (click)="GoBack()">
+                <p class="float-left">
+                    <mdb-icon fas icon="undo" class="white-text" size="2x"></mdb-icon>
+                </p>
+            </div>
+            <p class="float-right">
+                <mdb-icon class="white-text" size="2x" fas icon="sync"></mdb-icon>
+            </p>
+        </mdb-card-body>
+    </mdb-card>
+</div>
+
+<br><br>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="h4">Select Wish Type:</p>
+        </div>
+        <div class="col-lg-5">
+            <select [(ngModel)]="selectedValue" (change)="selectedDropdown($event)" class="browser-default custom-select">
+                <option value="1" selected>Character Event Wish</option>
+                <option value="2">Weapon Event Wish</option>
+                <option value="3">Permanent Wish</option>
+            </select>
+        </div>
+        <div class="w-100"></div>
+        <br>
+        <div class="col-lg-12">
+            <p class="lead"><strong>You can check the wishes you made in the past month. Wish records are updated about
+                    one hour after the wish is made. If there is no record yet, please check again later.
+                    The times displayed below are according to your current server time.</strong></p>
+        </div>
+        <div class="col-lg-12">
+            <br>
+            <table mdbTable mdbTableScroll scrollY="true" maxHeight="500" bordered="true">
+                <thead class="grey white-text">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item Type</th>
+                        <th scope="col">Item Name</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="selectedValue === '1'">
+                    <tr mdbTableCol *ngFor="let x of charBannerHistory; let i=index">
+                        <th scope="row">{{charBannerHistory.length - i}}</th>
+                        <td scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</td>
+                        <td *ngIf="x.rating == 5" class="orange-text"><strong>{{x.name}}</strong> </td>
+                        <td *ngIf="x.rating == 4" class="purple-text"><strong>{{x.name}}</strong> </td>
+                        <td *ngIf="x.rating == 3" class="blue-text"><strong>{{x.name}}</strong> </td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="selectedValue === '2'">
+                    <tr mdbTableCol *ngFor="let x of weapBannerHistory; let i=index">
+                        <th scope="row">{{weapBannerHistory.length - i}}</th>
+                        <td scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</td>
+                        <td *ngIf="x.rating == 5" class="orange-text"><strong>{{x.name}}</strong> </td>
+                        <td *ngIf="x.rating == 4" class="purple-text"><strong>{{x.name}}</strong> </td>
+                        <td *ngIf="x.rating == 3" class="blue-text"><strong>{{x.name}}</strong> </td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="selectedValue === '3'">
+                    <tr mdbTableCol *ngFor="let x of stanBannerHistory; let i=index">
+                        <th scope="row">{{stanBannerHistory.length - i}}</th>
+                        <td scope="row">{{x.type.charAt(0).toUpperCase() + x.type.slice(1,x.type.length)}}</td>
+                        <td *ngIf="x.rating == 5" class="orange-text"><strong>{{x.name}}</strong> </td>
+                        <td *ngIf="x.rating == 4" class="purple-text"><strong>{{x.name}}</strong> </td>
+                        <td *ngIf="x.rating == 3" class="blue-text"><strong>{{x.name}}</strong> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

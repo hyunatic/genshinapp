@@ -1,0 +1,114 @@
+[
+    {
+        "bannerName": "the-heron's-court",
+        "bannerImage": "the-heron's-court.png",
+        "bannerIcon": "ayaka.png",
+        "selectedBannerIcon": "ayaka-selected.png",
+        "fileName": "the-heron's-court.json"
+    },
+    {
+        "bannerName": "leaves-in-the-wind",
+        "bannerImage": "leaves-in-the-wind.png",
+        "bannerIcon": "kazuha.png",
+        "selectedBannerIcon": "kazuha-selected.png",
+        "fileName": "leaves-in-the-wind.json"
+    },
+    {
+        "bannerName": "adrift-in-the-harbor",
+        "bannerImage": "adrift-in-the-harbor.png",
+        "bannerIcon": "ganyu.png",
+        "selectedBannerIcon": "ganyu-selected.png",
+        "fileName": "adrift-in-the-harbor.json"
+    },
+    {
+        "bannerName": "ballad-in-goblets",
+        "bannerImage": "ballad-in-goblets.png",
+        "bannerIcon": "venti.png",
+        "selectedBannerIcon": "venti-selected.png",
+        "fileName": "ballad-in-goblets.json"
+    },
+    {
+        "bannerName": "ballad-in-goblets-2",
+        "bannerImage": "ballad-in-goblets-2.png",
+        "bannerIcon": "venti.png",
+        "selectedBannerIcon": "venti-selected.png",
+        "fileName": "ballad-in-goblets-2.json"
+    },
+    {
+        "bannerName": "born-of-ocean-swell",
+        "bannerImage": "born-of-ocean-swell.png",
+        "bannerIcon": "eula.png",
+        "selectedBannerIcon": "eula-selected.png",
+        "fileName": "born-of-ocean-swell.json"
+    },
+    {
+        "bannerName": "dance-of-lanterns",
+        "bannerImage": "dance-of-lanterns.png",
+        "bannerIcon": "keqing.png",
+        "selectedBannerIcon": "keqing-selected.png",
+        "fileName": "dance-of-lanterns.json"
+    },
+    {
+        "bannerName": "farewell-of-snezhnaya-2",
+        "bannerImage": "farewell-of-snezhnaya-2.png",
+        "bannerIcon": "childe.png",
+        "selectedBannerIcon": "childe-selected.png",
+        "fileName": "farewell-of-snezhnaya-2.json"
+    },
+    {
+        "bannerName": "farewell-of-snezhnaya",
+        "bannerImage": "farewell-of-snezhnaya.png",
+        "bannerIcon": "childe.png",
+        "selectedBannerIcon": "childe-selected.png",
+        "fileName": "farewell-of-snezhnaya.json"
+    },
+    {
+        "bannerName": "gentry-of-hermitage-2",
+        "bannerImage": "gentry-of-hermitage-2.png",
+        "bannerIcon": "zhongli.png",
+        "selectedBannerIcon": "zhongli-selected.png",
+        "fileName": "gentry-of-hermitage-2.json"
+    },
+    {
+        "bannerName": "gentry-of-hermitage",
+        "bannerImage": "gentry-of-hermitage.png",
+        "bannerIcon": "zhongli.png",
+        "selectedBannerIcon": "zhongli-selected.png",
+        "fileName": "gentry-of-hermitage.json"
+    },
+    {
+        "bannerName": "invitation-to-mundane-life",
+        "bannerImage": "invitation-to-mundane-life.png",
+        "bannerIcon": "xiao.png",
+        "selectedBannerIcon": "xiao.png",
+        "fileName": "invitation-to-mundane-life.json"
+    },
+    {
+        "bannerName": "moment-of-bloom",
+        "bannerImage": "moment-of-bloom.png",
+        "bannerIcon": "hu-tao.png",
+        "selectedBannerIcon": "hu-tao.png",
+        "fileName": "moment-of-bloom.json"
+    },
+    {
+        "bannerName": "secretum-secretorum",
+        "bannerImage": "secretum-secretorum.png",
+        "bannerIcon": "albedo.png",
+        "selectedBannerIcon": "albedo-selected.png",
+        "fileName": "secretum-secretorum.json"
+    },
+    {
+        "bannerName": "sparkling-steps-2",
+        "bannerImage": "sparkling-steps-2.png",
+        "bannerIcon": "klee.png",
+        "selectedBannerIcon": "klee-selected.png",
+        "fileName": "sparkling-steps-2.json"
+    },
+    {
+        "bannerName": "sparkling-steps",
+        "bannerImage": "sparkling-steps.png",
+        "bannerIcon": "klee.png",
+        "selectedBannerIcon": "klee-selected.png",
+        "fileName": "sparkling-steps.json"
+    }
+]

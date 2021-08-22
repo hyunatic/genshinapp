@@ -1,0 +1,20 @@
+<div class="mb-n5" style="margin-top: 60px;">
+  <mdb-card bgColor="bg-dark">
+    <mdb-card-body>
+      <p class="float-right" (click)="SelectBanner()">
+        <mdb-icon class="white-text" size="2x" fas icon="arrow-right"></mdb-icon>
+      </p>
+    </mdb-card-body>
+  </mdb-card>
+</div>
+
+<br><br><br>
+<div class="container">
+  <h4>Select Banner</h4>
+  <hr>
+  <mdb-carousel [interval]="0" [animation]="'slide'" (activeSlideChange)="onActiveSlideChange($event)">
+    <mdb-carousel-item *ngFor="let x of bannerList">
+      <img class="d-block w-100 img-fluid" src="assets/images/banners/{{x.bannerImage}}" alt="First slide">
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>

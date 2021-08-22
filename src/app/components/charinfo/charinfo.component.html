@@ -1,0 +1,19 @@
+<br><br><br><br><br>
+<div *ngFor="let i of charDetails">
+  <mdb-card>
+    <!--Card image-->
+    <mdb-card-img src="{{i.images.image}}" alt="Card image cap">
+    </mdb-card-img>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>{{i.name}}</h4>
+      </mdb-card-title>
+      <!--Text-->
+      <mdb-card-text> {{i.description}}
+      </mdb-card-text>
+    </mdb-card-body>
+  </mdb-card>
+  <br>
+</div>

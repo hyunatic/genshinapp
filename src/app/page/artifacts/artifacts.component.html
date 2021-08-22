@@ -1,0 +1,154 @@
+<br><br><br><br>
+<div class="container">
+    <div class="row flex-center">
+        <button mdbBtn color="primary" class="waves-light" type="button" (click)="basic.toggle()" mdbWavesEffect>
+            5 Star Artifacts
+        </button>
+        <button mdbBtn color="primary" class="waves-light" type="button" (click)="elementskill.toggle()" mdbWavesEffect>
+            4 Star Artifacts
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-xs-12">
+        <div mdbCollapse [isCollapsed]="true" #basic="bs-collapse">
+                <div *ngFor="let x of fiveStarArtifactList; let i=index">
+                    <mdb-card bgColor="bg-warning" class="mb-3" borderColor="border-dark">
+                        <mdb-card-header class="bg-transparent border-dark">{{x.name}}</mdb-card-header>
+                        <mdb-card-body>
+                            <mdb-card-title>
+                                <h5><u> 2 Piece Set-Effect: </u>{{fiveStarArtifactList[i]['2pc']}}</h5>
+                                <h5><u> 4 Piece Set-Effect: </u>{{fiveStarArtifactList[i]['4pc']}}</h5>
+                            </mdb-card-title>
+                            <mdb-card-text>
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">
+                                        <div class="view overlay zoom">
+                                            <img src="{{x.images.flower}}" class="img-fluid rounded" alt="zoom">
+                                            <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                <p class="black-text">{{x.flower.name}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="view overlay zoom">
+                                            <img src="{{x.images.plume}}" class="img-fluid rounded" alt="zoom">
+                                            <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                <p class="black-text">{{x.plume.name}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="view overlay zoom">
+                                            <img src="{{x.images.sands}}" class="img-fluid rounded" alt="zoom">
+                                            <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                <p class="black-text">{{x.sands.name}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="view overlay zoom">
+                                            <img src="{{x.images.goblet}}" class="img-fluid rounded" alt="zoom">
+                                            <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                <p class="black-text">{{x.goblet.name}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="view overlay zoom">
+                                            <img src="{{x.images.circlet}}" class="img-fluid rounded" alt="zoom">
+                                            <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                <p class="black-text">{{x.circlet.name}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </mdb-card-text>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+        <div mdbCollapse [isCollapsed]="true" #elementskill="bs-collapse">
+            
+                <div *ngFor="let x of fourStarArtifactList; let i=index">
+                    <mdb-card bgColor="bg-secondary" class="mb-3" borderColor="border-dark">
+                        <mdb-card-header class="bg-transparent border-dark">{{x.name}}</mdb-card-header>
+                        <mdb-card-body>
+                            <div *ngIf="fourStarArtifactList[i]['2pc']">
+                                <mdb-card-title>
+                                    <h5><u> 2 Piece Set-Effect: </u>{{fourStarArtifactList[i]['2pc']}}</h5>
+                                    <h5><u> 4 Piece Set-Effect: </u>{{fourStarArtifactList[i]['4pc']}}</h5>
+                                </mdb-card-title>
+                            </div>
+                            <div *ngIf="fourStarArtifactList[i]['1pc']">
+                                <mdb-card-title>
+                                    <h5><u> 1 Piece Set-Effect: </u>{{fourStarArtifactList[i]['1pc']}}</h5>
+                                </mdb-card-title>
+                            </div>
+                            <mdb-card-text>
+                                <div *ngIf="fourStarArtifactList[i]['2pc']">
+                                    <ul class="list-group list-group-horizontal">
+                                        <li class="list-group-item">
+                                            <div class="view overlay zoom">
+                                                <img src="{{x.images.flower}}" class="img-fluid rounded" alt="zoom">
+                                                <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                    <p class="black-text">{{x.flower.name}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="view overlay zoom">
+                                                <img src="{{x.images.plume}}" class="img-fluid rounded" alt="zoom">
+                                                <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                    <p class="black-text">{{x.plume.name}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="view overlay zoom">
+                                                <img src="{{x.images.sands}}" class="img-fluid rounded" alt="zoom">
+                                                <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                    <p class="black-text">{{x.sands.name}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="view overlay zoom">
+                                                <img src="{{x.images.goblet}}" class="img-fluid rounded" alt="zoom">
+                                                <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                    <p class="black-text">{{x.goblet.name}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="view overlay zoom">
+                                                <img src="{{x.images.circlet}}" class="img-fluid rounded" alt="zoom">
+                                                <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                    <p class="black-text">{{x.circlet.name}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div *ngIf="fourStarArtifactList[i]['1pc']">
+                                    <ul class="list-group list-group-horizontal">
+                                        <li class="list-group-item">
+                                            <div class="view overlay zoom">
+                                                <img src="{{x.images.circlet}}" class="img-fluid rounded" alt="zoom">
+                                                <div class="mask flex-center waves-effect waves-light rgba-red-slight">
+                                                    <p class="black-text">{{x.circlet.name}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </mdb-card-text>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

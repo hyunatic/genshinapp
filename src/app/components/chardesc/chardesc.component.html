@@ -1,0 +1,15 @@
+<h3>Character Infomation:</h3>
+<mdb-card>
+<ul class="list-group list-group-flush" *ngFor="let x of charDetails;">
+        <li class="list-group-item">Title: {{x.title}}</li>
+        <li class="list-group-item">Affiliation: {{x.affiliation}}</li>
+        <li class="list-group-item">Rarity: {{x.rarity}}</li>
+        <li class="list-group-item">Weapon Type: {{x.weapontype}}</li>
+        <li class="list-group-item">Substat Increment: {{x.substat}}</li>
+        <li class="list-group-item">Element: {{x.element}}</li>
+        <li class="list-group-item">EN Voice Actor: {{x.cv.english}}</li>
+        <li class="list-group-item">CN Voice Actor: {{x.cv.chinese}}</li>
+        <li class="list-group-item">JP Voice Actor: {{x.cv.japanese}}</li>
+        <li class="list-group-item">KR Voice Actor: {{x.cv.korean}}</li>
+</ul>
+</mdb-card>

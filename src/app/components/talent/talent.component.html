@@ -1,0 +1,71 @@
+<div class="row flex-center">
+  <button mdbBtn color="primary" class="waves-light" type="button" (click)="basic.toggle()" mdbWavesEffect>
+    Basic Attack
+  </button>
+  <button mdbBtn color="primary" class="waves-light" type="button" (click)="elementskill.toggle()" mdbWavesEffect>
+    Elemental Skill
+  </button>
+  <button mdbBtn color="primary" class="waves-light" type="button" (click)="elementburst.toggle()" mdbWavesEffect>
+    Elemental Burst
+  </button>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div mdbCollapse [isCollapsed]="true" #basic="bs-collapse">
+      <h5>Basic Attack</h5>
+      <hr>
+      <mdb-card>
+        <ul class="list-group list-group-flush" *ngFor="let x of combat1; let i=index">
+          <div *ngFor="let j of x['dmg']">
+            <li class="list-group-item">{{x.name}} {{j[basicLevel - 1] * 100 | number }}</li>
+          </div>
+        </ul>
+      </mdb-card>
+      <div class="md-form">
+        <input mdbInput type="text" name="text" [(ngModel)]="basicLevel" id="form1" class="form-control">
+        <label for="form1" class="">Enter Level</label>
+        <p>Level Entered: {{basicLevel}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div mdbCollapse [isCollapsed]="true" #elementskill="bs-collapse">
+      <h5>Elemental Skill</h5>
+    <hr>
+      <mdb-card>
+        <ul class="list-group list-group-flush" *ngFor="let x of combat2; let i=index">
+          <div *ngFor="let j of x['dmg']">
+            <li class="list-group-item">{{x.name}} {{j[elementLevel - 1] * 100 | number }}</li>
+          </div>
+        </ul>
+      </mdb-card>
+      <div class="md-form">
+        <input mdbInput type="text" name="text" [(ngModel)]="elementLevel" id="form2" class="form-control">
+        <label for="form1" class="">Enter Level</label>
+        <p>Level Entered: {{elementLevel}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div mdbCollapse [isCollapsed]="true" #elementburst="bs-collapse">
+      <h5>Elemental Burst</h5>
+      <hr>
+      <mdb-card>
+        <ul class="list-group list-group-flush" *ngFor="let x of combat3; let i=index">
+          <div *ngFor="let j of x['dmg']">
+            <li class="list-group-item">{{x.name}} {{j[burstLevel - 1] * 100 | number }}</li>
+          </div>
+        </ul>
+      </mdb-card>
+      <div class="md-form">
+        <input mdbInput type="text" name="text" [(ngModel)]="burstLevel" id="form3" class="form-control">
+        <label for="form1" class="">Enter Level</label>
+        <p>Level Entered: {{burstLevel}}</p>
+      </div>
+    </div>
+  </div>
+</div>
