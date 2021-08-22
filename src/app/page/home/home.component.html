@@ -1,1 +1,12 @@
-<!-- <app-videobackground></app-videobackground> -->
+<br>
+<div class="container mt-5">
+    <div class="md-form">
+        <input mdbInput type="text" [(ngModel)]="username" class="form-control">
+        <label for="form1" class="">Username</label>
+    </div>
+    <div class="md-form">
+        <input mdbInput type="password" [(ngModel)]="password" class="form-control">
+        <label for="form1" class="">Password</label>
+    </div>
+    <button type="button" (click)="Login()" mdbBtn color="primary" mdbWavesEffect>Login</button>
+</div>
