@@ -1,25 +1,32 @@
 [
 	{
-		"name": "Mistsplitter Reforged",
+		"name": "Thundering Pulse",
 		"rating": 5,
-		"class": "Sword",
-    	"isFeatured": true,
-		"src": "mistspliter-reforged.png",
+		"class": "Bow",
+		"isFeatured": true,
+		"src": "thundering-pulse.png",
 		"type": "weapon"
 	},
 	{
-		"name": "Skyward Spine",
+		"name": "Skyward Blade",
 		"rating": 5,
-		"type": "weapon",
-		"class": "Polearm",
+		"class": "Sword",
 		"isFeatured": true,
-		"src": "skyward-spine.png"
+		"src": "skyward-blade.png",
+		"type": "weapon"
 	},
 	{
 		"name": "Skyward Pride",
 		"rating": 5,
 		"class": "Claymore",
 		"src": "skyward-pride.png",
+		"type": "weapon"
+	},
+	{
+		"name": "Lost Prayer to the Sacred Winds",
+		"rating": 5,
+		"class": "Catalyst",
+		"src": "lost-prayer-to-the-sacred-winds.png",
 		"type": "weapon"
 	},
 	{
@@ -51,17 +58,17 @@
 		"type": "weapon"
 	},
 	{
+		"name": "Skyward Spine",
+		"rating": 5,
+		"type": "weapon",
+		"class": "Polearm",
+		"src": "skyward-spine.png"
+	},
+	{
 		"name": "Wolf's Gravestone",
 		"rating": 5,
 		"class": "Claymore",
 		"src": "wolfs-gravestone.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Skyward Blade",
-		"rating": 5,
-		"class": "Sword",
-		"src": "skyward-blade.png",
 		"type": "weapon"
 	},
 	{
@@ -72,49 +79,10 @@
 		"type": "weapon"
 	},
 	{
-		"name": "The Stringless",
-		"rating": 4,
-		"class": "Bow",
-		"isFeatured": true,
-		"src": "the-stringless.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Favonius Codex",
-		"rating": 4,
-		"class": "Catalyst",
-		"src": "favonius-codex.png",
-		"type": "weapon",
-		"isFeatured": true
-	},
-	{
-		"name": "Favonius Lance",
-		"rating": 4,
-		"class": "Lance",
-		"type": "weapon",
-		"src": "favonius-lance.png",
-		"isFeatured": true
-	},
-	{
-		"name": "Favonius Sword",
-		"rating": 4,
-		"class": "Sword",
-		"src": "favonius-sword.png",
-		"type": "weapon",
-		"isFeatured": true
-	},
-	{
-		"name": "Sacrificial Greatsword",
-		"rating": 4,
-		"type": "weapon",
-		"isFeatured": true,
-		"class": "Sword",
-		"src": "sacrificial-greatsword.png"
-	},
-	{
 		"name": "Mitternachts Waltz",
 		"rating": 4,
 		"class": "Bow",
+		"isFeatured": true,
 		"src": "mitternachts-waltz.png",
 		"type": "weapon"
 	},
@@ -122,14 +90,23 @@
 		"name": "The Widsith",
 		"rating": 4,
 		"class": "Catalyst",
+		"isFeatured": true,
 		"src": "the-widsith.png",
 		"type": "weapon"
 	},
-	
+	{
+		"name": "Favonius Lance",
+		"rating": 4,
+		"isFeatured": true,
+		"class": "Lance",
+		"type": "weapon",
+		"src": "favonius-lance.png"
+	},
 	{
 		"name": "The Bell",
 		"rating": 4,
 		"class": "Claymore",
+		"isFeatured": true,
 		"src": "the-bell.png",
 		"type": "weapon"
 	},
@@ -137,6 +114,7 @@
 		"name": "Lions Roar",
 		"rating": 4,
 		"class": "Sword",
+		"isFeatured": true,
 		"src": "lions-roar.png",
 		"type": "weapon"
 	},
@@ -288,6 +266,13 @@
 		"type": "weapon"
 	},
 	{
+		"name": "The Stringless",
+		"rating": 4,
+		"class": "Bow",
+		"src": "the-stringless.png",
+		"type": "weapon"
+	},
+	{
 		"name": "Favonius Warbow",
 		"rating": 4,
 		"class": "Bow",
@@ -309,6 +294,13 @@
 		"type": "weapon"
 	},
 	{
+		"name": "Favonius Codex",
+		"rating": 4,
+		"class": "Catalyst",
+		"src": "favonius-codex.png",
+		"type": "weapon"
+	},
+	{
 		"name": "Dragon's Bane",
 		"rating": 4,
 		"class": "Polearm",
@@ -322,7 +314,13 @@
 		"class": "Claymore",
 		"src": "rainslasher.png"
 	},
-	
+	{
+		"name": "Sacrificial Greatsword",
+		"rating": 4,
+		"type": "weapon",
+		"class": "Sword",
+		"src": "sacrificial-greatsword.png"
+	},
 	{
 		"name": "Favonius Greatsword",
 		"rating": 4,
@@ -344,7 +342,13 @@
 		"src": "the-flute.png",
 		"type": "weapon"
 	},
-
+	{
+		"name": "Favonius Sword",
+		"rating": 4,
+		"class": "Sword",
+		"src": "favonius-sword.png",
+		"type": "weapon"
+	},
 	{
 		"name": "Slingshot",
 		"rating": 3,

@@ -1,5 +1,12 @@
 [
     {
+        "bannerName": "tapestry-of-golden-flames",
+        "bannerImage": "tapestry-of-golden-flames.png",
+        "bannerIcon": "yoimiya.png",
+        "selectedBannerIcon": "yoimiya-selected.png",
+        "fileName": "tapestry-of-golden-flames.json"
+    },
+    {
         "bannerName": "the-heron's-court",
         "bannerImage": "the-heron's-court.png",
         "bannerIcon": "ayaka.png",
